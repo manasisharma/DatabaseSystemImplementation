@@ -1,0 +1,83 @@
+
+GOutam Pingali, Manasi Sharma
+
+Project 2:
+
+readme 
+=========
+There are two folders, namely a2-1 and a2-1 corresponding to the 2 milestones for project 2. Each of these folders have their own make files which create test.out executable files in each folder. run each of them by navingating to these folders and running make and then executing ./test.out in each folder.
+
+This test driver gives a menu-based interface to three options that allows you
+to test your code:
+
+	1. sort
+	2. sort + display
+	3. sort + write
+
+Note that the driver works only with heap dbfiles created over tpch tables.
+Before using the driver, make sure you have generated the necessary heap dbfiles
+(you can use test driver 1 to generate the heap dbfiles. For your convenience a
+copy of test driver 1 is included along with this driver. Look at files
+a1-README, and a1-test.cc)
+
+In Command promt goto folder : a2test
+
+To compile the driver, type
+	make test.out
+
+To run the driver, type
+	test.out
+and follow the on-screen instructions.
+
+Using the driver:
+==================
+
+
+You will be asked to enter the sort ordering that is to be passed on to the
+BigQ constructor. You will need to enter the sort ordering as a CNF with only one
+literal per clause. The literal must be a valid attribute name for the selected
+relation. The test driver will construct a ordermaker instance to be passed on to
+the BigQ constructor. Some examples are provided below. Note that to use this
+feature, you need to use the new version of the files Parse.y and Comparison.cc
+provided in this driver.
+
+CNF examples to specify sort order:
+===================================
+
+dbfile      |  sortby                                  |  CNF
+---------------------------------------------------------------------------------
+region      |  r_name 	 	                       | (r_name)
+       
+partsupp    |  ps_suppkey, ps_partkey 		       | (ps_suppkey) AND (ps_partkey)
+
+lineitem    |  l_shipdate, l_extendedprice, l_quantity | (l_shipdate) AND 
+							 (l_extendedprice) AND 
+							 (l_quantity)
+
+Project 2 Part 2 :
+------------------
+
+In Command promt goto folder : a2-2test
+
+To compile the driver, type
+	make test.out
+
+To run the driver, type
+	test.out
+and follow the on-screen instructions.
+
+This test driver gives a menu-based interface to three options that allows you
+to test your code:
+
+
+        1.  create sorted dbfile
+        2.  scan a dbfile
+        3.  run some query
+
+
+CNF examples :
+
+dbfile      |  sortby                                  |  CNF
+---------------------------------------------------------------------------------
+region      |  r_name 	 	                       | (r_name)
+
